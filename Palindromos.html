@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindromos</title>
+    <!--Alan Capilla Guzman-->
+</head>
+<body>
+
+    <input type = "text" id = "Texto_in"><br>
+    <button onclick="Ejecutor()">Verificar</button>
+
+    <script>
+        
+        function Ejecutor(){
+            let palindromo = document.getElementById("Texto_in").value;
+
+            console.log(palindromo);
+
+            var separado = palindromo.split("");
+
+            Verificador();
+
+            function Verificador(){
+                console.log(separado);
+                let j = (separado.length - 1);
+                for(let i = 0; i < separado.length; i++){
+                    if(separado[i] != separado[j]){
+                        return document.write("No es un palindromo");
+                    }    
+                    j--
+                }
+
+                Letras();
+                return document.write("<br>Si es un palindromo");
+            }
+        
+            function Letras(){
+                let letra_media = separado.length / 2;
+                console.log(letra_media);
+                return document.write("La primer letra es: ",separado[0]," La ultima letra es: ",separado[separado.length - 1]," La letra de en medio es: ",separado[Math.floor(letra_media)]),"<br>";
+            }    
+        }
+
+        
+        
+    </script>
+</body>
+</html>
