@@ -1,39 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Arreglos</title>
-</head>
-<body>
-	<form id = "Datos" align = "center">
-		Agrega el arreglo<br>
-		<input type="text" id = "Arreglo_us" placeholder="Numero"><br>
-		<br>Dime que nuevo dato quieres agregar<br>
-		<input type="number" id="Dato" placeholder="New num"><br>
-		<br>¿En que posicio?<br>
-		<input type="number" id="posicion" placeholder="Posición"><br>
-		<br><button onclick="Insertar()"><i>Insertar</i></button>	
-	</form>
+//Ciclos Alan Capilla
+function ciclos(limite){
+    let numeros = 1;
+    let aumento = 0;
 
-	<script type="text/javascript">
-		function Insertar(){
-			let ingresar = document.getElementById("Dato").value;
-			let lugar = document.getElementById("posicion").value;
-			let dato = document.getElementById("Arreglo_us").value;
-			let arreglo = dato.split("");
+    while(numeros <= limite){
+        console.log(numeros);
+        aumento++;
+        numeros+= aumento;
+    }
+}
 
-			document.write("Este es tu Arreglo: "+arreglo);
-
-			agregar(arreglo);
-
-			function agregar(){
-				arreglo[lugar - 1] = ingresar;
-				return document.write("<br>Tu nuevo arreglo: "+arreglo);
-			}
-
-		}
-	</script>
-</body>
-</html>
+ciclos(56);
