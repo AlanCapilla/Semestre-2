@@ -1,51 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Palindromos</title>
-    <!--Alan Capilla Guzman-->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Arreglos</title>
 </head>
 <body>
+	<form id = "Datos" align = "center">
+		Agrega el arreglo<br>
+		<input type="text" id = "Arreglo_us" placeholder="Numero"><br>
+		<br>Dime que nuevo dato quieres agregar<br>
+		<input type="number" id="Dato" placeholder="New num"><br>
+		<br>¿En que posicio?<br>
+		<input type="number" id="posicion" placeholder="Posición"><br>
+		<br><button onclick="Insertar()"><i>Insertar</i></button>	
+	</form>
 
-    <input type = "text" id = "Texto_in"><br>
-    <button onclick="Ejecutor()">Verificar</button>
+	<script type="text/javascript">
+		function Insertar(){
+			let ingresar = document.getElementById("Dato").value;
+			let lugar = document.getElementById("posicion").value;
+			let dato = document.getElementById("Arreglo_us").value;
+			let arreglo = dato.split("");
 
-    <script>
-        
-        function Ejecutor(){
-            let palindromo = document.getElementById("Texto_in").value;
+			document.write("Este es tu Arreglo: "+arreglo);
 
-            console.log(palindromo);
+			agregar(arreglo);
 
-            var separado = palindromo.split("");
+			function agregar(){
+				arreglo[lugar - 1] = ingresar;
+				return document.write("<br>Tu nuevo arreglo: "+arreglo);
+			}
 
-            Verificador();
-
-            function Verificador(){
-                console.log(separado);
-                let j = (separado.length - 1);
-                for(let i = 0; i < separado.length; i++){
-                    if(separado[i] != separado[j]){
-                        return document.write("No es un palindromo");
-                    }    
-                    j--
-                }
-
-                Letras();
-                return document.write("<br>Si es un palindromo");
-            }
-        
-            function Letras(){
-                let letra_media = separado.length / 2;
-                console.log(letra_media);
-                return document.write("La primer letra es: ",separado[0]," La ultima letra es: ",separado[separado.length - 1]," La letra de en medio es: ",separado[Math.floor(letra_media)]),"<br>";
-            }    
-        }
-
-        
-        
-    </script>
+		}
+	</script>
 </body>
 </html>
