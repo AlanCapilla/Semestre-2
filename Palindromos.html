@@ -4,33 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formula general</title>
+    <title>Objetos</title>
     <script>
-        function boton(){
-            let a = parseInt(document.getElementById("a").value);
-            let b = parseInt(document.getElementById("b").value);
-            let c = parseInt(document.getElementById("c").value);
-            
-            formula_general(a,b,c)
+        function objeto(){
+            let lavi = document.getElementById("conocer").value;
 
-            function formula_general(){
-                let x1 = 0;
-                let x2 = 0;
-                let dentro_de_la_raiz = Math.pow(b,2) - (4*a*c); 
-                let raiz = Math.sqrt(dentro_de_la_raiz);
-                x1 = (-b - raiz)/(2*a);
-                x2 = (-b + raiz)/(2*a);
-                return document.write("X1 = "+x1+"<br>X2 = "+x2);
+            let Perro = {
+                raza: "Husky",
+                nombre: "Lavi",
+                edad: "2 meses",
+                color: "blanco con ojos azules",
+                
             }
+        
+            document.write("<center>Conoces ahora que su "+lavi+" es: "+Perro[lavi]+"</center>");
         }
+        
+        
     </script>
 </head>
 <body>
-    <form align = "center">
-        <input type="text" id="a" placeholder="n" style="width: 10px;"> x<sup>2</sup> +
-        <input type="text" id="b" placeholder="n" style="width: 10px;"> x +
-        <input type="text" id="c" placeholder="n" style="width: 10px;"><br>
-        <br><button onclick="boton()">Cacular</button>
+    <H1><center>Objetos</center></H1>
+    <form align="center">
+        Dime que quieres saber de mi perro: <br>
+        <input type="text" id="conocer"><br>
+        <button onclick="objeto()">Conocer</button>
     </form>
 </body>
 </html>
