@@ -1,39 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Arreglos</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formula general</title>
+    <script>
+        function boton(){
+            let a = parseInt(document.getElementById("a").value);
+            let b = parseInt(document.getElementById("b").value);
+            let c = parseInt(document.getElementById("c").value);
+            
+            formula_general(a,b,c)
+
+            function formula_general(){
+                let x1 = 0;
+                let x2 = 0;
+                let dentro_de_la_raiz = Math.pow(b,2) - (4*a*c); 
+                let raiz = Math.sqrt(dentro_de_la_raiz);
+                x1 = (-b - raiz)/(2*a);
+                x2 = (-b + raiz)/(2*a);
+                return document.write("X1 = "+x1+"<br>X2 = "+x2);
+            }
+        }
+    </script>
 </head>
 <body>
-	<form id = "Datos" align = "center">
-		Agrega el arreglo<br>
-		<input type="text" id = "Arreglo_us" placeholder="Numero"><br>
-		<br>Dime que nuevo dato quieres agregar<br>
-		<input type="number" id="Dato" placeholder="New num"><br>
-		<br>¿En que posicio?<br>
-		<input type="number" id="posicion" placeholder="Posición"><br>
-		<br><button onclick="Insertar()"><i>Insertar</i></button>	
-	</form>
-
-	<script type="text/javascript">
-		function Insertar(){
-			let ingresar = document.getElementById("Dato").value;
-			let lugar = document.getElementById("posicion").value;
-			let dato = document.getElementById("Arreglo_us").value;
-			let arreglo = dato.split("");
-
-			document.write("Este es tu Arreglo: "+arreglo);
-
-			agregar(arreglo);
-
-			function agregar(){
-				arreglo[lugar - 1] = ingresar;
-				return document.write("<br>Tu nuevo arreglo: "+arreglo);
-			}
-
-		}
-	</script>
+    <form align = "center">
+        <input type="text" id="a" placeholder="n" style="width: 10px;"> x<sup>2</sup> +
+        <input type="text" id="b" placeholder="n" style="width: 10px;"> x +
+        <input type="text" id="c" placeholder="n" style="width: 10px;"><br>
+        <br><button onclick="boton()">Cacular</button>
+    </form>
 </body>
 </html>
